@@ -18,8 +18,9 @@ pipeline {
                 }
                 stage("stages3") {
                  steps {
-                     withMaven(jdk: 'jdk 8u212', maven: 'maven-3.6.1', mavenSettingsConfig: 'maven-setting-golf') {               
-                        sh "mvn clean install"
+                     withMaven(jdk: 'jdk 8u212', maven: 'maven-3.6.1', mavenSettingsConfig: 'maven-setting-golf') { 
+                        
+                        sh "mvn -f demo/pom.xml clean install"
                     }
                  }
                 }
